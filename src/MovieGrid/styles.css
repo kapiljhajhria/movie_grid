@@ -1,0 +1,8 @@
+.moviesgrid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #d7e1d3;
+    /*flex-wrap: wrap;*/
+}

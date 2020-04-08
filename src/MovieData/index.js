@@ -22,6 +22,8 @@ export default class MoviesData extends React.Component {
             let response = await fetch(url);
             let data= await response.json();
             tempMap['title']=data['title'];
+            tempMap['backdrop_path']=data['backdrop_path'];
+            tempMap['id']=data['id'];
             tempMap['posterurl']="http://image.tmdb.org/t/p/w185"+data["poster_path"];
             let tempGenres=[];
             for(let j=0;j<data["genres"].length;j++){

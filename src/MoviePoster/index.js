@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 class MoviePoster extends React.Component {
     render() {
         return (
-            <Link to="/moviedetails">
+            <Link to={`/moviedetails/${this.props.id}`}>
                 <div className="movieCard">
                     <div className="movie-poster" >
                         {/*{this.props.movieName}*/}

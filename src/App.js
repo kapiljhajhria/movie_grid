@@ -3,14 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import MovieData from "./MovieData"
 import './moviedatabase'
-
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import MovieDetails from './MovieDetails'
 function App() {
   return (
-    <div className="App">
-   <MovieData>
+ <Router>
+     <Switch>
+         <Route path="/moviedetails" component>
+             <MovieDetails>
 
-   </MovieData>
-    </div>
+             </MovieDetails>
+         </Route>
+         <Route path="/" component>
+           <MovieData>
+
+           </MovieData>
+       </Route>
+     </Switch>
+     <div className="App">
+
+     </div>
+ </Router>
   );
 }
 

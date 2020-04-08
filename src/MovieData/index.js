@@ -12,7 +12,7 @@ export default class MoviesData extends React.Component {
         }
     }
     getApiKey(){
-        return "Your API key Here";
+        return "9455f2fb0b779e4e7588ad14649658d3";
     }
     async getMovieData(){
         let tempList=[];

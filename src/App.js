@@ -9,10 +9,8 @@ function App() {
   return (
  <Router>
      <Switch>
-         <Route path="/moviedetails" component>
-             <MovieDetails>
+         <Route path="/moviedetails/:id" component={MovieDetails}>
 
-             </MovieDetails>
          </Route>
          <Route path="/" component>
            <MovieData>

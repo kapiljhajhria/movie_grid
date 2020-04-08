@@ -16,28 +16,13 @@ export default class MoviesData extends React.Component {
     }
     async getMovieData(){
         let tempList=[];
-        for(let i=500;i<510;i++){
-            let tempMap={};
-            let url="https://api.themoviedb.org/3/movie/"+i+"?api_key="+this.getApiKey();
+
+            let url="https://api.themoviedb.org/3/discover/movie?api_key="+this.getApiKey();
             let response = await fetch(url);
-            let data= await response.json();
-            tempMap['title']=data['title'];
-            tempMap['backdrop_path']=data['backdrop_path'];
-            tempMap['id']=data['id'];
-            tempMap['posterurl']="http://image.tmdb.org/t/p/w185"+data["poster_path"];
-            let tempGenres=[];
-            for(let j=0;j<data["genres"].length;j++){
-               let selectedGenre=data["genres"][j]['name'];
-               tempGenres.push(selectedGenre);
-            }
-            tempMap["genres"]=tempGenres;
-            tempMap['contentRating']=data['vote_average'];
-            tempList.push(tempMap);
-        }
+            let jsonMap= await response.json();
+            let data=jsonMap['results'];
 
-        // console.log(data);
-
-        this.setState({data:tempList,isLoading:true});
+        this.setState({data:data,isLoading:true});
         // return data;
     }
     componentDidMount(){

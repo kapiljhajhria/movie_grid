@@ -5,18 +5,12 @@ import '../moviedatabase'
 import moviesInfoList from "../moviedatabase";
 
 class MoviesGrid extends React.Component {
-    getMoviesRow(){
-        let moviesDiv=[];
-        this.props.allMoviesData.forEach((movie)=>moviesDiv.push(
-            <MoviePoster id={movie.id} imglink={movie.posterurl} genre={movie.genres.join(', ')} contentRating={movie.contentRating} movieName={movie.title}     > </MoviePoster>
-        ));
-        return moviesDiv;
-    }
+
     render() {
         return (
             <div className="moviesgrid">
             {/*    call function moviesRow here*/}
-                {this.getMoviesRow()}
+                {this.props.allMoviesData.map((movie)=> <MoviePoster movie={movie}/>)}
 
             </div>
         );

@@ -41,18 +41,10 @@
     width: 100%;
     background-color: white;
 
-    /*height: 8vh;*/
     /*margin: 8px;*/
     visibility: hidden;
     /*transition: visibility 500ms;*/
 }
-
-/*.mv-inf-title, .mv-inf-ratings,.mv-inf-genre{*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: center;*/
-/*    !*flex: 1;*!*/
-/*}*/
 
 .mv-inf-top{
     text-align: left;
@@ -66,7 +58,7 @@
     justify-content: space-between;
 
 }
-.mv-inf-genre{
+.mv-inf-overview{
     display: flex;
     /*color: #868c85;*/
     /*font-weight: 400;*/
@@ -74,7 +66,7 @@
     text-align: left;
 }
 
-.mv-inf-ratings{
+.mv-inf-vote-avg{
     border-radius: 8px;
     background-color: red;
     padding-left:8px;

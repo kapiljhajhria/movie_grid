@@ -1,16 +1,14 @@
 .loadingscreen{
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-self: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
 }
 
 .lds-spinner {
-    color: blue;
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
 .lds-spinner div {
     transform-origin: 40px 40px;

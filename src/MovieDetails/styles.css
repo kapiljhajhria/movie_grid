@@ -1,4 +1,140 @@
-img{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loadingScreen-moviedetails{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.lds-spinner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}
+.bg-img {
+    position: absolute;
+    z-index: 0;
+    /*opacity: 0.8;*/
+    filter: blur(1px);
+
+}
+
+img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.background-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.screen {
+    height: 100vh;
+    width: 100vw;
+    color: #3fd400;
+    display: flex;
+
+}
+
+.content {
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.poster-img {
+    flex: 1;
+    display: flex;
+    /*height: 400px;*/
+    /*width: 300px;*/
+}
+
+.poster-img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.movie-fullinfo-area {
+
+
+}
+
+.mov-inf {
+    flex: 2;
+    color: #d7e1d3;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    /*align-self: flex-start;*/
+    justify-content: space-evenly;
+}
+
+.mov-inf > div {
+    margin-bottom: 15px;
+}
+
+.mov-name {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.mov-tag {
+    font-style: italic;
+    font-size: 20px;
+}
+
+.mov-overview {
+    font-size: 20px;
+}
+
+.mov-genres {
+    display: flex;
+    /*width: 80%;*/
+    /*justify-content: space-evenly;*/
+}
+
+.mov-genres .genres:first-child {
+    margin-left: 0;
+}
+
+.genres {
+    background-color: #d7e1d3;
+    opacity: 0.7;
+    color: black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 10px;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .content{
+        padding-top: 15px;
+        flex-direction: column;
+
+    }
+    .mov-inf > div {
+        margin-bottom: 8px;
+
+    }
+    .mov-inf{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }

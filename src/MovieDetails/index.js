@@ -53,6 +53,9 @@ export default class MovieDetails extends React.Component {
                     </div>
                 </div>
             ) : (<div className="screen">
+                <div className="black-overlay">
+
+                </div>
                 <div className="background-img">
                     <img className="bg-img" src={"https://image.tmdb.org/t/p/original" + movieDetails.backdrop_path}
                          alt=""/>

@@ -19,7 +19,7 @@ export default class MoviesData extends React.Component {
     async getMovieData() {
         let data = [];
         let noOfPages = 3;
-        for (let i = 1; i <= noOfPages; i++) {
+        for (let i = 1; i <= noOfPages; i++){
             let url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + i;
             let response = await fetch(url);
             let jsonMap = await response.json();

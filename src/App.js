@@ -5,24 +5,25 @@ import MovieData from "./MovieData"
 import './moviedatabase'
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import MovieDetails from './MovieDetails'
+
 function App() {
-  return (
- <Router>
-     <Switch>
-         <Route path="/moviedetails/:id" component={MovieDetails}>
+    return (
+        <Router>
+            <Switch>
+                <Route path="/moviedetails/:id" component={MovieDetails}>
 
-         </Route>
-         <Route path="/" component>
-           <MovieData>
+                </Route>
+                <Route path="/" component>
+                    <MovieData>
 
-           </MovieData>
-       </Route>
-     </Switch>
-     <div className="App">
+                    </MovieData>
+                </Route>
+            </Switch>
+            <div className="App">
 
-     </div>
- </Router>
-  );
+            </div>
+        </Router>
+    );
 }
 
 export default App;

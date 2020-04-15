@@ -10,7 +10,6 @@ class MoviesGrid extends React.Component {
         return (
             <div className="moviesgrid">
                 {this.props.allMoviesData.map((movie) => <MoviePoster movie={movie}/>)}
-
             </div>
         );
     }

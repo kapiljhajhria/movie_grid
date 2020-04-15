@@ -1,7 +1,8 @@
 import React from 'react';
 import MovieGrid from "../MovieGrid";
 import './styles.css'
-
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import SearchPage from "../SearchPage";
 
 export default class MoviesData extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ export default class MoviesData extends React.Component {
     async getMovieData() {
         let data = [];
         let noOfPages = 3;
-        for (let i = 1; i <= noOfPages; i++){
+        for (let i = 1; i <= noOfPages; i++) {
             let url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + i;
             let response = await fetch(url);
             let jsonMap = await response.json();
@@ -55,12 +56,19 @@ export default class MoviesData extends React.Component {
                     </div>
                 ) : (
                     <div className="page">
-                        <button className="searchbtn">
-                            Search
-                        </button>
-                        <MovieGrid allMoviesData={this.state.data}>
 
-                        </MovieGrid>
+                        <Route path="/search" component={SearchPage}/>
+                        <Route exact path="/movie_grid">
+                            <Link to={`/search`}>
+                                <button className="searchbtn">
+                                    Search
+                                </button>
+                            </Link>
+                            <MovieGrid allMoviesData={this.state.data}>
+
+                            </MovieGrid>
+                        </Route>
+
                     </div>
 
 

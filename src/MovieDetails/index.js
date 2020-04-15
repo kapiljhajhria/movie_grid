@@ -77,7 +77,7 @@ export default class MovieDetails extends React.Component {
                             {movieDetails.overview}
                         </div>
                         <div className="mov-genres">
-                            {movieDetails.genres.map((el)=><div className="genres">
+                            {movieDetails.genres.map((el) => <div className="genres">
                                 {el['name']}
                             </div>)}
                         </div>

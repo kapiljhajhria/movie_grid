@@ -8,20 +8,27 @@ export default class MoviesData extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            searchQuery: this.props.match != null ? this.props.match.params.searchQuery : null,
             isLoading: false,
             data: null
         }
     }
 
+// https://api.themoviedb.org/3/search/movie?api_key= + apikey + &language=en-US&query= + searchTerm
     getApiKey() {
         return "9455f2fb0b779e4e7588ad14649658d3";
     }
 
     async getMovieData() {
         let data = [];
-        let noOfPages = 3;
+        let noOfPages = 1;
         for (let i = 1; i <= noOfPages; i++) {
-            let url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + i;
+            let url;
+            if (this.state.searchQuery === null)
+                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + i;
+            else {
+                url = "https://api.themoviedb.org/3/search/movie?api_key=" + this.getApiKey() + "&language=en-US&query=" + this.state.searchQuery;
+            }
             let response = await fetch(url);
             let jsonMap = await response.json();
             let tempData = jsonMap['results'];
@@ -56,19 +63,14 @@ export default class MoviesData extends React.Component {
                     </div>
                 ) : (
                     <div className="page">
+                        <Link to={`/search`}>
+                            <button className="searchbtn">
+                                Search
+                            </button>
+                        </Link>
+                        <MovieGrid allMoviesData={this.state.data}>
 
-                        <Route path="/search" component={SearchPage}/>
-                        <Route exact path="/movie_grid">
-                            <Link to={`/search`}>
-                                <button className="searchbtn">
-                                    Search
-                                </button>
-                            </Link>
-                            <MovieGrid allMoviesData={this.state.data}>
-
-                            </MovieGrid>
-                        </Route>
-
+                        </MovieGrid>
                     </div>
 
 

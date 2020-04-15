@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/movies-grid/static/css/main.09de718f.chunk.css",
-    "main.js": "/movies-grid/static/js/main.16a1a3a1.chunk.js",
-    "main.js.map": "/movies-grid/static/js/main.16a1a3a1.chunk.js.map",
-    "runtime-main.js": "/movies-grid/static/js/runtime-main.13627b78.js",
-    "runtime-main.js.map": "/movies-grid/static/js/runtime-main.13627b78.js.map",
-    "static/js/2.beae8ea6.chunk.js": "/movies-grid/static/js/2.beae8ea6.chunk.js",
-    "static/js/2.beae8ea6.chunk.js.map": "/movies-grid/static/js/2.beae8ea6.chunk.js.map",
-    "index.html": "/movies-grid/index.html",
-    "precache-manifest.3fc0cab9043b215d8b3e704a1634c4ce.js": "/movies-grid/precache-manifest.3fc0cab9043b215d8b3e704a1634c4ce.js",
-    "service-worker.js": "/movies-grid/service-worker.js",
-    "static/css/main.09de718f.chunk.css.map": "/movies-grid/static/css/main.09de718f.chunk.css.map",
-    "static/js/2.beae8ea6.chunk.js.LICENSE.txt": "/movies-grid/static/js/2.beae8ea6.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/movies-grid/static/media/logo.5d5d9eef.svg"
+    "main.css": "/movie-grid/static/css/main.09de718f.chunk.css",
+    "main.js": "/movie-grid/static/js/main.5404ec29.chunk.js",
+    "main.js.map": "/movie-grid/static/js/main.5404ec29.chunk.js.map",
+    "runtime-main.js": "/movie-grid/static/js/runtime-main.14f52e8f.js",
+    "runtime-main.js.map": "/movie-grid/static/js/runtime-main.14f52e8f.js.map",
+    "static/js/2.beae8ea6.chunk.js": "/movie-grid/static/js/2.beae8ea6.chunk.js",
+    "static/js/2.beae8ea6.chunk.js.map": "/movie-grid/static/js/2.beae8ea6.chunk.js.map",
+    "index.html": "/movie-grid/index.html",
+    "precache-manifest.ccea9be1f10bbc9015ad6f21556396cd.js": "/movie-grid/precache-manifest.ccea9be1f10bbc9015ad6f21556396cd.js",
+    "service-worker.js": "/movie-grid/service-worker.js",
+    "static/css/main.09de718f.chunk.css.map": "/movie-grid/static/css/main.09de718f.chunk.css.map",
+    "static/js/2.beae8ea6.chunk.js.LICENSE.txt": "/movie-grid/static/js/2.beae8ea6.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/movie-grid/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.13627b78.js",
+    "static/js/runtime-main.14f52e8f.js",
     "static/js/2.beae8ea6.chunk.js",
     "static/css/main.09de718f.chunk.css",
-    "static/js/main.16a1a3a1.chunk.js"
+    "static/js/main.5404ec29.chunk.js"
   ]
 }

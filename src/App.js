@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import MovieData from "./MovieData"
 import './moviedatabase'
@@ -11,22 +11,22 @@ function App() {
     return (
         <Router>
             <Switch>
+
                 <Route path="/moviedetails/:id" component={MovieDetails}>
 
                 </Route>
-                <Route path="/search" component={SearchPage}/>
                 <Route path="/search/:searchQuery" component={MovieData}/>
+                <Route exact path="/movie_grid" component={MovieData}>
+                </Route>
+                <Route exact path="/search" component={SearchPage}/>
+
                 <Route path="/">
                     <MovieData>
 
                     </MovieData>
                 </Route>
-                <Route exact path="/movie_grid" component={MovieData}>
-                </Route>
-            </Switch>
-            <div className="App">
 
-            </div>
+            </Switch>
         </Router>
     );
 }

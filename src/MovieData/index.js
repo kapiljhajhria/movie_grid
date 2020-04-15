@@ -2,7 +2,7 @@ import React from 'react';
 import MovieGrid from "../MovieGrid";
 import './styles.css'
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import SearchPage from "../SearchPage";
+
 
 export default class MoviesData extends React.Component {
     constructor(props) {
@@ -24,7 +24,7 @@ export default class MoviesData extends React.Component {
         let noOfPages = 1;
         for (let i = 1; i <= noOfPages; i++) {
             let url;
-            if (this.state.searchQuery === null)
+            if (this.state.searchQuery == null)
                 url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + i;
             else {
                 url = "https://api.themoviedb.org/3/search/movie?api_key=" + this.getApiKey() + "&language=en-US&query=" + this.state.searchQuery;

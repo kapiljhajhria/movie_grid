@@ -33,7 +33,7 @@ export default class MovieDetails extends React.Component {
     }
 
     render() {
-        const movieDetails = this.state.data;
+        let movieDetails = this.state.data;
         return (
             !this.state.isLoading ? (
                 <div className={"loadingScreen-moviedetails"}>

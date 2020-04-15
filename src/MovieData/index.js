@@ -54,10 +54,16 @@ export default class MoviesData extends React.Component {
                         </div>
                     </div>
                 ) : (
+                    <div className="page">
+                        <button className="searchbtn">
+                            Search
+                        </button>
+                        <MovieGrid allMoviesData={this.state.data}>
 
-                    <MovieGrid allMoviesData={this.state.data}>
+                        </MovieGrid>
+                    </div>
 
-                    </MovieGrid>
+
                 )}
             </div>
         );

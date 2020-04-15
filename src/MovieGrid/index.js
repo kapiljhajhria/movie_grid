@@ -9,8 +9,7 @@ class MoviesGrid extends React.Component {
     render() {
         return (
             <div className="moviesgrid">
-            {/*    call function moviesRow here*/}
-                {this.props.allMoviesData.map((movie)=> <MoviePoster movie={movie}/>)}
+                {this.props.allMoviesData.map((movie) => <MoviePoster movie={movie}/>)}
 
             </div>
         );

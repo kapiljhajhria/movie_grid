@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import MoviesData from "../MovieData";
 
 
-export default class NameForm extends React.Component {
+export default class SearchPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -23,27 +23,19 @@ export default class NameForm extends React.Component {
 
     render() {
         return (
-            <Router>
-                <Switch>
-                    <Route path="/search/:searchQuery" component={MoviesData}>
-
-                    </Route>
-                    <Route path="/search" >
-                        <div className="search-page">
-                            <form onSubmit={this.handleSubmit} className="search-form">
-                                <input type="text" className="searchInput" value={this.state.value} onChange={this.handleChange}/>
-                                <Link to={`/search/${this.state.value}`}>
-                                    <input type="submit" className="searcPagehbtn" value="Submit"/>
-                                </Link>
-                            </form>
-
-                        </div>
-                    </Route>
-                </Switch>
-                <div className="App">
+            <div className="App">
+                <div className="search-page">
+                    <form onSubmit={this.handleSubmit} className="search-form">
+                        <input type="text" className="searchInput" value={this.state.value}
+                               onChange={this.handleChange}/>
+                        <Link to={`/search/${this.state.value}`}>
+                            <input type="submit" className="searcPagehbtn" value="Submit"/>
+                        </Link>
+                    </form>
 
                 </div>
-            </Router>
+            </div>
+
 
         );
     }

@@ -6,7 +6,7 @@ class MoviePoster extends React.Component {
     render() {
         const movie =this.props.movie;
         return (
-            <Link to={`/moviedetails/${movie.id}`}>
+            <Link to={`/moviedetails/${movie.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <div className="movieCard">
                     <div className="movie-poster" >
                         <div>

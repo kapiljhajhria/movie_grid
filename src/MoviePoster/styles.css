@@ -4,8 +4,9 @@
 
 .movieCard{
     position: relative;
-    margin: 4px;
+    margin: 20px 10px;
     max-width: 100%;
+    /*padding: 8px;*/
 }
 .movie-poster{
     position: relative;

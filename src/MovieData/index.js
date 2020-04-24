@@ -43,9 +43,9 @@ export default class MoviesData extends React.Component {
 
     render() {
         return (
-            <div className={"main"}>
-                {!this.state.isLoading ? (
-                    <div className={"loadingScreen"}>
+            !this.state.isLoading ? (
+                <div className="App">
+                    <div className={"loadingScreen-moviedetails"}>
                         <div className="lds-spinner">
                             <div></div>
                             <div></div>
@@ -61,21 +61,19 @@ export default class MoviesData extends React.Component {
                             <div></div>
                         </div>
                     </div>
-                ) : (
-                    <div className="page">
-                        <Link to={`/search`}>
-                            <button className="searchbtn">
-                                Search
-                            </button>
-                        </Link>
-                        <MovieGrid allMoviesData={this.state.data}>
+                </div>
+            ) : (
+                <div className="page">
+                    <Link to={`/search`}>
+                        <button className="searchbtn">
+                            Search
+                        </button>
+                    </Link>
+                    <MovieGrid allMoviesData={this.state.data}>
 
-                        </MovieGrid>
-                    </div>
-
-
-                )}
-            </div>
+                    </MovieGrid>
+                </div>
+            )
         );
     }
 }

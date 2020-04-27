@@ -29,7 +29,9 @@ export default class SearchPage extends React.Component {
                         <input type="text" className="searchInput" value={this.state.value}
                                onChange={this.handleChange}/>
                         <Link to={`/search/${this.state.value}`}>
-                            <input type="submit" className="searcPagehbtn" value="Submit"/>
+                            <button className="searchbtn">
+                                Search
+                            </button>
                         </Link>
                     </form>
 

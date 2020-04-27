@@ -33,11 +33,11 @@
     position: absolute;
     alignment: bottom;
     bottom: 0;
-    padding:5px;
+    padding:8px;
     align-self: end;
     max-width: 100%;
     background-color: white;
-
+    border-radius: 0 0 8px 8px ;
     /*margin: 8px;*/
     visibility: hidden;
     /*transition: visibility 500ms;*/

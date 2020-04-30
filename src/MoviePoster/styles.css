@@ -39,8 +39,8 @@
     background-color: white;
     border-radius: 0 0 8px 8px ;
     /*margin: 8px;*/
-    /*visibility: hidden;*/
-    /*transition: visibility 500ms;*/
+    visibility: hidden;
+    transition: visibility 500ms;
 }
 
 .mv-inf-top{

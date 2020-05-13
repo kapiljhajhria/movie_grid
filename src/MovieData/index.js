@@ -11,7 +11,7 @@ export default class MoviesData extends React.Component {
             searchQuery: this.props.match != null ? this.props.match.params.searchQuery : null,
             isLoading: false,
             data: null,
-            pageNo:(this.props.match != null && this.props.page !== "search") ? parseInt(this.props.match.params.page) : 1,
+            pageNo: (this.props.match != null && this.props.page !== "search") ? parseInt(this.props.match.params.page) : 1,
         }
     }
 
@@ -27,9 +27,9 @@ export default class MoviesData extends React.Component {
         for (let i = 1; i <= noOfPages; i++) {
             let url;
             if (this.state.searchQuery == null)
-                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + this.state.pageNo;
+                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&include_video=true&page=" + this.state.pageNo;
             else {
-                url = "https://api.themoviedb.org/3/search/movie?api_key=" + this.getApiKey() + "&language=en-US&query=" + this.state.searchQuery;
+                url = "https://api.themoviedb.org/3/search/movie?api_key=" + this.getApiKey() + "&include_video=true&language=en-US&query=" + this.state.searchQuery;
             }
             let response = await fetch(url);
             let jsonMap = await response.json();
@@ -75,7 +75,7 @@ export default class MoviesData extends React.Component {
 
                     </MovieGrid>
                     <div className="bottomButtons">
-                        {this.state.pageNo > 1 ? <Link to={`/page/${this.state.pageNo-1}`}>
+                        {this.state.pageNo > 1 ? <Link to={`/page/${this.state.pageNo - 1}`}>
                             <button className="prevBtn" onClick={() => {
                                 this.setState({pageNo: this.state.pageNo - 1, isLoading: false}
                                 )
@@ -84,9 +84,9 @@ export default class MoviesData extends React.Component {
                                 Previous
                             </button>
                         </Link> : ""}
-                        <Link to={`/page/${this.state.pageNo+1}`}>
-                            <button className="nxtBtn" onClick={()=>{
-                                this.setState({pageNo:this.state.pageNo+1,isLoading: false})
+                        <Link to={`/page/${this.state.pageNo + 1}`}>
+                            <button className="nxtBtn" onClick={() => {
+                                this.setState({pageNo: this.state.pageNo + 1, isLoading: false})
                                 this.getMovieData();
                             }}>
                                 Next

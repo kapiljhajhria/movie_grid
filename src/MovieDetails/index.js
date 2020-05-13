@@ -18,7 +18,7 @@ export default class MovieDetails extends React.Component {
     }
 
     async getMovieData() {
-        let url = "https://api.themoviedb.org/3/movie/" + this.state.id + "?api_key=" + this.getApiKey();
+        let url = "https://api.themoviedb.org/3/movie/" + this.state.id + "?api_key=" + this.getApiKey()+"&append_to_response=videos";
         console.log('urls is:' + url);
         let response = await fetch(url);
         let data = await response.json();
@@ -80,6 +80,9 @@ export default class MovieDetails extends React.Component {
                             {movieDetails.genres.map((el) => <div className="genres">
                                 {el['name']}
                             </div>)}
+                        </div>
+                        <div className="videoBtn" onClick={()=>window.open("https://www.youtube.com/watch?v="+movieDetails.videos.results[0].key)}>
+                            Watch Trailer
                         </div>
                     </div>
 

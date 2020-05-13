@@ -11,7 +11,7 @@ export default class MoviesData extends React.Component {
             searchQuery: this.props.match != null ? this.props.match.params.searchQuery : null,
             isLoading: false,
             data: null,
-            pageNo:this.props.match != null ? parseInt(this.props.match.params.page) : 1,
+            pageNo:(this.props.match != null && this.props.page !== "search") ? parseInt(this.props.match.params.page) : 1,
         }
     }
 
@@ -75,7 +75,7 @@ export default class MoviesData extends React.Component {
 
                     </MovieGrid>
                     <div className="bottomButtons">
-                        {this.state.pageNo > 1 ? <Link to={`/${this.state.pageNo-1}`}>
+                        {this.state.pageNo > 1 ? <Link to={`/page/${this.state.pageNo-1}`}>
                             <button className="prevBtn" onClick={() => {
                                 this.setState({pageNo: this.state.pageNo - 1, isLoading: false}
                                 )
@@ -84,7 +84,7 @@ export default class MoviesData extends React.Component {
                                 Previous
                             </button>
                         </Link> : ""}
-                        <Link to={`/${this.state.pageNo+1}`}>
+                        <Link to={`/page/${this.state.pageNo+1}`}>
                             <button className="nxtBtn" onClick={()=>{
                                 this.setState({pageNo:this.state.pageNo+1,isLoading: false})
                                 this.getMovieData();

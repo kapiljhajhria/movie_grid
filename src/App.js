@@ -16,7 +16,7 @@ function App() {
 
                 </Route>
                 <Route path="/search/:searchQuery" component={MovieData}/>
-                <Route path="/:page" component={MovieData}/>
+                <Route path="/page/:page" component={MovieData}/>
 
                 <Route exact path="/movie_grid" component={MovieData}>
                 </Route>

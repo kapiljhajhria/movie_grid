@@ -114,3 +114,8 @@
     background-color: white;
     font-weight: bold;
 }
+
+.prevBtn,.nxtBtn{
+    margin: 10px;
+    /*color: #3fd400;*/
+}

@@ -10,7 +10,8 @@ export default class MoviesData extends React.Component {
         this.state = {
             searchQuery: this.props.match != null ? this.props.match.params.searchQuery : null,
             isLoading: false,
-            data: null
+            data: null,
+            pageNo:1,
         }
     }
 
@@ -25,7 +26,7 @@ export default class MoviesData extends React.Component {
         for (let i = 1; i <= noOfPages; i++) {
             let url;
             if (this.state.searchQuery == null)
-                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + i;
+                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&page=" + this.state.pageNo;
             else {
                 url = "https://api.themoviedb.org/3/search/movie?api_key=" + this.getApiKey() + "&language=en-US&query=" + this.state.searchQuery;
             }
@@ -72,6 +73,21 @@ export default class MoviesData extends React.Component {
                     <MovieGrid allMoviesData={this.state.data}>
 
                     </MovieGrid>
+                    <div className="bottomButtons">
+                        {this.state.pageNo > 1 ? <button className="prevBtn" onClick={() => {
+                            this.setState({pageNo: this.state.pageNo - 1, isLoading: false}
+                            )
+                            this.getMovieData();
+                        }}>
+                            Previous
+                        </button> : ""}
+                        <button className="nxtBtn" onClick={()=>{
+                            this.setState({pageNo:this.state.pageNo+1,isLoading: false})
+                            this.getMovieData();
+                        }}>
+                            Next
+                        </button>
+                    </div>
                 </div>
             )
         );

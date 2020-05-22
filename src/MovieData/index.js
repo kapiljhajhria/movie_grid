@@ -19,6 +19,7 @@ export default class MoviesData extends React.Component {
     getApiKey() {
         return "9455f2fb0b779e4e7588ad14649658d3";
     }
+    page = (this.props.match != null && this.props.page !== "search") ? parseInt(this.props.match.params.page) : 1
 
     async getMovieData() {
         let data = [];
@@ -27,7 +28,7 @@ export default class MoviesData extends React.Component {
         for (let i = 1; i <= noOfPages; i++) {
             let url;
             if (this.state.searchQuery == null)
-                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&include_video=true&page=" + this.state.pageNo;
+                url = "https://api.themoviedb.org/3/discover/movie?api_key=" + this.getApiKey() + "&include_video=true&page=" + this.page;
             else {
                 url = "https://api.themoviedb.org/3/search/movie?api_key=" + this.getApiKey() + "&include_video=true&language=en-US&query=" + this.state.searchQuery;
             }
@@ -40,11 +41,22 @@ export default class MoviesData extends React.Component {
     }
 
     componentDidMount() {
+        console.count("component did mount called")
         this.getMovieData();
+        console.log("params match from component did mount ",this.props.match?.params || "no params")
+        window.onpopstate=function(){
+            console.count("button pressed")
+
+
+        }
+
     }
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     this.getMovieData();
+    // }
 
     render() {
-        return (
+        { console.log("params match from render ",this.props.match?.params || "no params")}        return (
             !this.state.isLoading ? (
                 <div className="App">
                     <div className={"loadingScreen-moviedetails"}>
@@ -75,20 +87,13 @@ export default class MoviesData extends React.Component {
 
                     </MovieGrid>
                     <div className="bottomButtons">
-                        {this.state.pageNo > 1 ? <Link to={`/page/${this.state.pageNo - 1}`}>
-                            <button className="prevBtn" onClick={() => {
-                                this.setState({pageNo: this.state.pageNo - 1, isLoading: false}
-                                )
-                                this.getMovieData();
-                            }}>
+                        {this.page > 1 ? <Link to={`/page/${this.page - 1}`}>
+                            <button className="prevBtn" >
                                 Previous
                             </button>
                         </Link> : ""}
-                        <Link to={`/page/${this.state.pageNo + 1}`}>
-                            <button className="nxtBtn" onClick={() => {
-                                this.setState({pageNo: this.state.pageNo + 1, isLoading: false})
-                                this.getMovieData();
-                            }}>
+                        <Link to={`/page/${this.page + 1}`}>
+                            <button className="nxtBtn" >
                                 Next
                             </button>
                         </Link>

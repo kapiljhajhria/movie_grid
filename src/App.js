@@ -18,8 +18,8 @@ function App() {
                 <Route path="/search/:searchQuery" component={MovieData}/>
                 <Route path="/page/:page" component={MovieData}/>
 
-                <Route exact path="/movie_grid" component={MovieData}>
-                </Route>
+                {/*<Route exact path="/movie_grid" component={MovieData}>*/}
+                {/*</Route>*/}
                 <Route exact path="/search" component={SearchPage}/>
 
                 <Route path="/">

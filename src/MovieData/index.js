@@ -26,6 +26,8 @@ export default function MovieData(props) {
     let page = (props.match != null && props.page !== "search") ? parseInt(props.match.params.page) : 1
 
     async function getMovieData() {
+        setIsLoading(false)
+        setData(null)
         let data = [];
         let noOfPages = 1;
 
@@ -60,7 +62,7 @@ export default function MovieData(props) {
     // }
 
     return (
-        !isLoading ? (
+        !data ? (
             <div className="App">
                 <div className={"loadingScreen-moviedetails"}>
                     <div className="lds-spinner">

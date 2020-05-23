@@ -12,6 +12,9 @@
 }
 
 .lds-spinner div {
+    align-content: center;
+    align-items: center;
+    align-self: center;
     transform-origin: 40px 40px;
     animation: lds-spinner 1.2s linear infinite;
 }
@@ -25,7 +28,7 @@
     width: 6px;
     height: 18px;
     border-radius: 20%;
-
+    background: #000000;
 }
 
 .lds-spinner div:nth-child(1) {

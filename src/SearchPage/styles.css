@@ -19,7 +19,6 @@
 .searcPagehbtn{
     border-radius: 2px;
     background-color: #d7e1d3;
-    padding-left: 0;
     padding: 2px;
 }
 @media only screen and (max-width: 600px) {

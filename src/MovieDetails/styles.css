@@ -118,6 +118,16 @@ img {
 
 }
 
+.videoBtn{
+    border-radius: 2px;
+    background-color: #d7e1d3;
+    padding: 4px 8px 4px 8px;
+    color: black;
+    width: fit-content;
+}
+.videoBtn:hover{
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 600px) {
     .content{

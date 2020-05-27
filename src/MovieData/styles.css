@@ -121,4 +121,14 @@
 .prevBtn,.nxtBtn{
     margin: 10px;
     /*color: #3fd400;*/
+    border-radius: 8px;
+    background-color: #d7e1d3;
+    padding: 4px 8px 4px 8px;
+    color: black;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.prevBtn:hover, .nxtBtn:hover{
+    cursor: pointer;
 }
